@@ -4,13 +4,13 @@ import java.text.MessageFormat;
 
 import org.springframework.util.StringUtils;
 
-import com.fz.common.enums.BizErrorEnum;
+import com.fz.common.enums.ErrorEnum;
 
 public class BizException extends RuntimeException{
 	
 private static final long serialVersionUID = 7946023196149777499L;
 	
-	protected BizErrorEnum errorCode;
+	protected ErrorEnum errorCode;
 	
 	protected String realCode;
 	
@@ -18,22 +18,20 @@ private static final long serialVersionUID = 7946023196149777499L;
 	
 	protected String[] arguments;
 
-	
-	
 
-	public BizErrorEnum getErrorCode() {
+	public ErrorEnum getErrorCode() {
 		return errorCode;
 	}
 	
 
 
-	public BizException(BizErrorEnum BizErrorEnum, String... arguments) {
+	public BizException(ErrorEnum ErrorEnum, String... arguments) {
 		super();
-		this.errorCode = BizErrorEnum;
-		this.realCode = BizErrorEnum.getErrorCode();
+		this.errorCode = ErrorEnum;
+		this.realCode = ErrorEnum.getErrorCode();
 		this.arguments =arguments;
 	}
-	public BizException(BizErrorEnum errorCode, Throwable cause) {
+	public BizException(ErrorEnum errorCode, Throwable cause) {
 		super(cause);
 		this.errorCode = errorCode;
 		this.realCode = errorCode.getErrorCode();
@@ -51,7 +49,7 @@ private static final long serialVersionUID = 7946023196149777499L;
 				defaultMessage = errorCode.getDefaultMessage();
 			}
 		}		
-		if (!StringUtils.isEmpty(defaultMessage)) {
+		if (StringUtils.isEmpty(defaultMessage)) {
 			return notMessage;
 		}
 		return MessageFormat.format(defaultMessage, this.arguments);

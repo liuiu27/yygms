@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>欢迎登录后台管理系统</title>
 <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
-<script src="../plugs/js/cloud.js" type="text/javascript"></script>
+<!-- <script src="../plugs/js/cloud.js" type="text/javascript"></script> -->
 
 <script type="text/javascript" src="../plugs/js/jquery-1.9.js"></script>
-<script type="text/javascript" src="../static/js/index.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
 
 
 <script language="javascript">
@@ -45,11 +45,11 @@
     <span class="systemlogo"></span> 
        
     <div class="loginbox">
-    <form id="loginForm" name="loginForm"  action="/user/find" method="post" >
+    <form id="loginForm" name="loginForm"  action="/yygms/user/find" >
     <ul>
-    <li><input id ='username' name="username" type="text" class="loginuser" value="用户名" onclick="JavaScript:this.value=''"/></li>
-    <li><input id ="password" name="password" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
-    <li><input name="loginBtn" type="button" class="loginbtn" value="登录"  onclick="login()"/>
+    <li><input id ='username' name="username" type="text" class="loginuser" value="" onclick="JavaScript:this.value=''"/></li>
+    <li><input id ="password" name="password" type="text" class="loginpwd" value="" onclick="JavaScript:this.value=''"/></li>
+    <li><input name="loginBtn" onclick="login()"  type="button" class="loginbtn" value="登录"  />
     <label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label>
     <a href="#">忘记密码？</a></label></li>
     <li > <p  id ="msg"  style="color: red"> </p> </li>

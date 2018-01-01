@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @RequestMapping("/shop")
 public class MainController {
 
-    private Logger logger = Logger.getLogger(String.valueOf(UserController.class));
+    private Logger logger = Logger.getLogger(String.valueOf(MainController.class));
 
     @Resource(name = "UserService")
     private UserService userService;
@@ -44,12 +44,6 @@ public class MainController {
         return map;
     }
 
-    @RequestMapping("/success")
-    public String success(){
-        System.out.println("登录成功。。。。");
-        logger.info("登录成功。。。。");
 
-        return "success";
-    }
 
 }

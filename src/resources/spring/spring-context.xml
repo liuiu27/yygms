@@ -115,4 +115,7 @@
 
     <!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+    
+    <!-- 异常统一 配置 -->
+    <bean id="exceptionHandler" class="com.fz.common.handler.MyExceptionHandler"/> 
 </beans>
